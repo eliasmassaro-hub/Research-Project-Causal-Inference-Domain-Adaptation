@@ -1,15 +1,46 @@
-# Causal Domain Adaptation — Transporting the ATE across domains
+<h1 align="center">Causal Domain Adaptation</h1>
 
-> **Status: work in progress.** Personally inotiated research project under the supervision of
-Prof. Clausel (CRAN) and and Dr. A. Poinsot (Lead of Research, Ekimetrics).
-> Code and report are still being written; the repository layout below is the target one.
+<p align="center">
+  <b>Transporting the ATE across domains</b><br>
+  <i>From Pearl &amp; Bareinboim's transportability theory to operational domain adaptation</i>
+</p>
 
-Domain adaptation (DA) asks how a predictor trained on a source domain behaves on a shifted
-target domain. Causal transportability (Pearl & Bareinboim) asks when a causal quantity
-estimated in a source population is valid in another. This project studies the intersection:
-**what does the causal structure of a shift tell us about which DA correction is legitimate?**
+<p align="center">
+  <img src="https://img.shields.io/badge/status-work%20in%20progress-F59E0B?style=flat-square" alt="status">
+  <img src="https://img.shields.io/badge/python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="python">
+  <img src="https://img.shields.io/badge/topic-causal%20inference-2E7D6F?style=flat-square" alt="causal inference">
+  <img src="https://img.shields.io/badge/topic-domain%20adaptation-6C63FF?style=flat-square" alt="domain adaptation">
+  <img src="https://img.shields.io/badge/license-MIT-334155?style=flat-square" alt="license">
+</p>
+
+<p align="center">
+  <b>Elias Massaro</b> — Mines Nancy &amp; M2 MVA, ENS Paris-Saclay<br>
+  Personally initiated research project, supervised by<br>
+  <b>Prof. M. Clausel</b> (CRAN) and <b>Dr. A. Poinsot</b> (Lead of Research, Ekimetrics)
+</p>
 
 ---
+
+> [!NOTE]
+> **Work in progress.** The report and the code are still being written; nothing is pushed yet.
+> This README describes the target state of the repository.
+
+## Objective
+
+Domain adaptation (DA) asks how a predictor trained on a source domain behaves on a shifted
+target domain. Causal transportability asks when a causal quantity estimated in a source
+population remains valid in another. The two literatures answer neighbouring questions with
+almost no shared vocabulary.
+
+**The goal of this project is to turn the transportability framework of Bareinboim & Pearl (2013)
+into an operational tool for domain adaptation** — i.e. to make the causal structure of a shift
+say *which* DA correction is legitimate, instead of correcting blindly.
+
+| # | Axis | Question | Deliverable |
+|:-:|---|---|---|
+| **1** | **Theory** | Which shifts leave a causal estimand invariant, and what does each one cost in target data? | Transport formulas + a *typed* refinement of selection diagrams |
+| **2** | **Software** | Can a practitioner declare a causal diagram and get the right correction automatically? | A causal-structure layer for [**SKADA**](https://scikit-adaptation.github.io/), the open-source Python DA library |
+| **3** | **Learning** | What if the diagram is unknown? | DA for structural causal models via a neural network estimating the underlying causal graph |
 
 ## Problem statement
 
@@ -24,11 +55,42 @@ Standard DA lives in the first branch; the 2013 Bareinboim–Pearl machinery (do
 $s$-hedge, sID) lives in the second. This project works on the bridge between them, with a
 focus on transporting the **Average Treatment Effect (ATE)** under three data regimes.
 
+```mermaid
+flowchart LR
+    C(("C")) --> T(("T"))
+    C --> Y(("Y"))
+    T -- "τ(C)" --> Y
+    S["S"] -.-> C
+    S -.-> Y
+
+    classDef sel fill:#FEF3C7,stroke:#F59E0B,stroke-width:2px,color:#78350F
+    classDef var fill:#F1F5F9,stroke:#475569,stroke-width:1.5px,color:#0F172A
+    class S sel
+    class C,T,Y var
+```
+
+<p align="center"><sub>Selection diagram. <b>S</b> marks <i>where</i> the two domains differ — and the
+<i>absent</i> arrows are the ones carrying the information.</sub></p>
+
+> [!IMPORTANT]
+> Invariance of the estimand is not invariance of the statistic. Parameters can move the naive
+> regression slope while leaving the ATE untouched — so a DA method calibrated on a marginal
+> statistic may "correct" a shift that does not exist.
+
+## Roadmap
+
+- [x] Literature map: Pearl-school transportability vs. ML-school invariance vs. OT-based DA
+- [x] Closed forms for the ATE and the confounding bias in a Gaussian SCM, Monte-Carlo validated
+- [x] Taxonomy of shifts: which correction is legitimate for which perturbed parameter
+- [ ] Typed selection diagrams (additive / modulator / off-effect arrows)
+- [ ] Causal-structure layer for SKADA
+- [ ] Graph estimation by neural network, and its effect on downstream transport
+- [ ] Report
 
 ## Getting started
 
 ```bash
-git clone https://github.com/<user>/<repo>.git
+git clone https://github.com/eliasmassaro-hub/<repo>.git
 cd <repo>
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
@@ -36,7 +98,7 @@ jupyter lab notebooks/ATE_Transport.ipynb
 ```
 
 Python ≥ 3.10. Core dependencies: `numpy`, `scipy`, `pandas`, `statsmodels`, `networkx`
-(d-separation checks), `matplotlib`.
+(d-separation checks), `matplotlib`, `skada`.
 
 ## References
 
@@ -68,11 +130,10 @@ Python ≥ 3.10. Core dependencies: `numpy`, `scipy`, `pandas`, `statsmodels`, `
 - Wang et al. (2021). *Generalizing to unseen domains: a survey on domain generalization.*
   arXiv:2103.02503.
 
-## Author
+---
 
-Elias Massaro
-Research project on domain adaptation for causal models.
-
-
-
-
+<p align="center">
+  <sub><b>Elias Massaro</b> ·
+  <a href="https://github.com/eliasmassaro-hub">GitHub</a> ·
+  <a href="https://linkedin.com/in/elias-massaro">LinkedIn</a></sub>
+</p>

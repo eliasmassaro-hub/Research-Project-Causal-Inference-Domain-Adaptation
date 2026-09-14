@@ -11,7 +11,7 @@ estimated in a source population is valid in another. This project studies the i
 
 ---
 
-## 1. Problem statement
+## Problem statement
 
 Two branches must not be confused:
 
@@ -25,26 +25,7 @@ $s$-hedge, sID) lives in the second. This project works on the bridge between th
 focus on transporting the **Average Treatment Effect (ATE)** under three data regimes.
 
 
-
-## 5. Repository layout (target)
-
-```
-.
-├── report/                 # LaTeX source + compiled PDF of the report
-│   ├── ate_transport_notes.tex
-│   └── typed_selection_diagrams.tex
-├── notebooks/
-│   └── ATE_Transport.ipynb # SCM simulations, closed-form checks, shift taxonomy
-├── src/
-│   ├── scm.py              # sampling from the Gaussian SCM
-│   ├── estimators.py       # naive slope, reweighting, slope transport, (G) estimator
-│   └── experiments.py      # replication study over the shift taxonomy
-├── figures/
-├── requirements.txt
-└── README.md
-```
-
-## 6. Getting started
+## Getting started
 
 ```bash
 git clone https://github.com/<user>/<repo>.git
@@ -57,7 +38,7 @@ jupyter lab notebooks/ATE_Transport.ipynb
 Python ≥ 3.10. Core dependencies: `numpy`, `scipy`, `pandas`, `statsmodels`, `networkx`
 (d-separation checks), `matplotlib`.
 
-## 7. References
+## References
 
 **Causal transportability**
 
@@ -87,7 +68,7 @@ Python ≥ 3.10. Core dependencies: `numpy`, `scipy`, `pandas`, `statsmodels`, `
 - Wang et al. (2021). *Generalizing to unseen domains: a survey on domain generalization.*
   arXiv:2103.02503.
 
-## 8. Author
+## Author
 
 Elias Massaro
 Research project on domain adaptation for causal models.

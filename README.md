@@ -10,7 +10,6 @@
   <img src="https://img.shields.io/badge/python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="python">
   <img src="https://img.shields.io/badge/topic-causal%20inference-2E7D6F?style=flat-square" alt="causal inference">
   <img src="https://img.shields.io/badge/topic-domain%20adaptation-6C63FF?style=flat-square" alt="domain adaptation">
-  <img src="https://img.shields.io/badge/license-MIT-334155?style=flat-square" alt="license">
 </p>
 
 <p align="center">

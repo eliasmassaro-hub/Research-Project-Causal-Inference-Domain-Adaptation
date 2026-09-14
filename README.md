@@ -89,9 +89,9 @@ Python ≥ 3.10. Core dependencies: `numpy`, `scipy`, `pandas`, `statsmodels`, `
 
 ## 8. Author
 
-Elias Massaro — École des Mines de Nancy.
+Elias Massaro
 Research project on domain adaptation for causal models.
 
-## License
 
-MIT (to be confirmed).
+
+

@@ -21,8 +21,7 @@
 ---
 
 > [!NOTE]
-> **Work in progress.** The report and the code are still being written; nothing is pushed yet.
-> This README describes the target state of the repository.
+> **Work in progress.** This project started during August 2026. The report and the code are still being written.
 
 ## Objective
 
@@ -70,15 +69,6 @@ flowchart LR
 
 <p align="center"><sub>Selection diagram. <b>S</b> marks <i>where</i> the two domains differ 
 
-
-## Roadmap
-
-- [x] Literature map: Pearl-school transportability vs. ML-school invariance vs. OT-based DA
-- [ ] Taxonomy of shifts: which correction is legitimate for which perturbed parameter
-- [ ] Typed selection diagrams (additive / modulator / off-effect arrows)
-- [ ] Causal-structure layer for SKADA
-- [ ] Graph estimation by neural network, and its effect on downstream transport
-- [ ] Report
 
 ## Getting started
 

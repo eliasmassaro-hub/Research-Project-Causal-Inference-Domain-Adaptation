@@ -32,7 +32,7 @@ population remains valid in another. The two literatures answer neighbouring que
 almost no shared vocabulary.
 
 **The goal of this project is to turn the transportability framework of Bareinboim & Pearl (2013)
-into an operational tool for domain adaptation** — i.e. to make the causal structure of a shift
+into an operational tool for domain adaptation**  i.e. to make the causal structure of a shift
 say *which* DA correction is legitimate, instead of correcting blindly.
 
 | # | Axis | Question | Deliverable |
@@ -47,8 +47,8 @@ Two branches must not be confused:
 
 | | Object | Nature of the problem |
 |---|---|---|
-| **Statistical transportability** | $P^*(y \mid z)$ | estimable given target labels — a *statistical* problem (classical DA) |
-| **Causal transportability** | $P^*(y \mid do(x))$ | in general **not identifiable even with infinite target data** — an *identification* problem |
+| **Statistical transportability** | $P^*(y \mid z)$ | estimable given target labels: a *statistical* problem (classical DA) |
+| **Causal transportability** | $P^*(y \mid do(x))$ | in general **not identifiable even with infinite target data**: an *identification* problem |
 
 Standard DA lives in the first branch; the 2013 Bareinboim–Pearl machinery (do-calculus,
 $s$-hedge, sID) lives in the second. This project works on the bridge between them, with a
@@ -68,19 +68,13 @@ flowchart LR
     class C,T,Y var
 ```
 
-<p align="center"><sub>Selection diagram. <b>S</b> marks <i>where</i> the two domains differ — and the
-<i>absent</i> arrows are the ones carrying the information.</sub></p>
+<p align="center"><sub>Selection diagram. <b>S</b> marks <i>where</i> the two domains differ 
 
-> [!IMPORTANT]
-> Invariance of the estimand is not invariance of the statistic. Parameters can move the naive
-> regression slope while leaving the ATE untouched — so a DA method calibrated on a marginal
-> statistic may "correct" a shift that does not exist.
 
 ## Roadmap
 
 - [x] Literature map: Pearl-school transportability vs. ML-school invariance vs. OT-based DA
-- [x] Closed forms for the ATE and the confounding bias in a Gaussian SCM, Monte-Carlo validated
-- [x] Taxonomy of shifts: which correction is legitimate for which perturbed parameter
+- [] Taxonomy of shifts: which correction is legitimate for which perturbed parameter
 - [ ] Typed selection diagrams (additive / modulator / off-effect arrows)
 - [ ] Causal-structure layer for SKADA
 - [ ] Graph estimation by neural network, and its effect on downstream transport

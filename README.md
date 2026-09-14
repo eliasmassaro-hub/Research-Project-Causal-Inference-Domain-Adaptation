@@ -74,7 +74,7 @@ flowchart LR
 ## Roadmap
 
 - [x] Literature map: Pearl-school transportability vs. ML-school invariance vs. OT-based DA
-- [] Taxonomy of shifts: which correction is legitimate for which perturbed parameter
+- [ ] Taxonomy of shifts: which correction is legitimate for which perturbed parameter
 - [ ] Typed selection diagrams (additive / modulator / off-effect arrows)
 - [ ] Causal-structure layer for SKADA
 - [ ] Graph estimation by neural network, and its effect on downstream transport

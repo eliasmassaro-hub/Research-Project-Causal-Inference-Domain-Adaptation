@@ -1,6 +1,7 @@
 # Causal Domain Adaptation — Transporting the ATE across domains
 
-> **Status: work in progress.** Research project (Mines de Nancy).
+> **Status: work in progress.** Personally inotiated research project under the supervision of
+Prof. Clausel (CRAN) and and Dr. A. Poinsot (Lead of Research, Ekimetrics).
 > Code and report are still being written; the repository layout below is the target one.
 
 Domain adaptation (DA) asks how a predictor trained on a source domain behaves on a shifted
